@@ -2,7 +2,7 @@
 
 - **Status:** Accepted (2026-05-28)
 - **Date:** 2026-05-28
-- **Tracking issue:** [#415](https://github.com/open-gsd/get-shit-done-redux/issues/415) (incident #411; fix #412; culprit #406; rename #373/#379)
+- **Tracking issue:** [#415](https://github.com/open-gsd/get-ship-done-redux/issues/415) (incident #411; fix #412; culprit #406; rename #373/#379)
 
 ## Context
 

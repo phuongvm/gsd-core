@@ -168,7 +168,7 @@
 
 ## ワークフロー (88 shipped)
 
-完全な一覧は `get-shit-done/workflows/*.md` を参照してください。ワークフローはコマンドが内部で参照する薄いオーケストレーターです。ほとんどはエンドユーザーが直接読むものではありません。以下の行は各ワークフローファイルをその役割（`<purpose>` ブロックから導出）と、該当する場合はそれを呼び出すコマンドにマッピングします。
+完全な一覧は `get-ship-done/workflows/*.md` を参照してください。ワークフローはコマンドが内部で参照する薄いオーケストレーターです。ほとんどはエンドユーザーが直接読むものではありません。以下の行は各ワークフローファイルをその役割（`<purpose>` ブロックから導出）と、該当する場合はそれを呼び出すコマンドにマッピングします。
 
 | ワークフロー | 役割 | 呼び出し元 |
 |-------------|------|-----------|
@@ -266,7 +266,7 @@
 
 ## リファレンス (62 shipped)
 
-完全な一覧は `get-shit-done/references/*.md` を参照してください。リファレンスはワークフローとエージェントが `@-reference` として参照する共有ナレッジドキュメントです。以下のグループ分けは [`docs/ARCHITECTURE.md`](../ARCHITECTURE.md#references-get-shit-donereferencesmd) に対応します — コア、ワークフロー、思考モデルクラスター、モジュラープランナー分解。
+完全な一覧は `get-ship-done/references/*.md` を参照してください。リファレンスはワークフローとエージェントが `@-reference` として参照する共有ナレッジドキュメントです。以下のグループ分けは [`docs/ARCHITECTURE.md`](../ARCHITECTURE.md#references-get-ship-donereferencesmd) に対応します — コア、ワークフロー、思考モデルクラスター、モジュラープランナー分解。
 
 ### コアリファレンス
 
@@ -361,13 +361,13 @@
 | `user-story-template.md` | MVP 計画向けのユーザーストーリーフォーマット — "As a / I want to / So that" の構造化フィールド。 |
 | `spidr-splitting.md` | MVP モードで大きなユーザーストーリーを処理するための SPIDR 分割ルール。 |
 
-> **サブディレクトリ:** `get-shit-done/references/few-shot-examples/` には、特定のエージェントから参照される追加のフューショット例（`plan-checker.md`、`verifier.md`）が含まれます。これらは 62 のトップレベルリファレンスにはカウントされません。
+> **サブディレクトリ:** `get-ship-done/references/few-shot-examples/` には、特定のエージェントから参照される追加のフューショット例（`plan-checker.md`、`verifier.md`）が含まれます。これらは 62 のトップレベルリファレンスにはカウントされません。
 
 ---
 
 ## CLI モジュール (81 shipped)
 
-完全な一覧: `get-shit-done/bin/lib/*.cjs`。
+完全な一覧: `get-ship-done/bin/lib/*.cjs`。
 
 | モジュール | 責務 |
 |-----------|------|
@@ -441,7 +441,7 @@
 | `task-command-router.cjs` | `gsd-tools task` 向けの薄い CJS サブコマンドルーターアダプター |
 | `template.cjs` | 変数置換によるテンプレート選択と穴埋め |
 | `uat.cjs` | UAT ファイル解析、検証負債追跡、audit-uat サポート |
-| `ui-safety-gate.cjs` | シェルフリーのワード境界 UI トークン検出器（#3706、#3718）。フェーズセクションテキストを標準入力から読み込み、0（UI 発見）または 1（UI なし）で終了。GSD インストーラーが `$RUNTIME_DIR` に配布するために `get-shit-done/bin/lib/` にもデプロイ（#448） |
+| `ui-safety-gate.cjs` | シェルフリーのワード境界 UI トークン検出器（#3706、#3718）。フェーズセクションテキストを標準入力から読み込み、0（UI 発見）または 1（UI なし）で終了。GSD インストーラーが `$RUNTIME_DIR` に配布するために `get-ship-done/bin/lib/` にもデプロイ（#448） |
 | `update-context.cjs` | `/gsd:update` 向けの純粋なインストールコンテキストリゾルバー — ランタイム/スコープ/設定ディレクトリ/バージョン検出（LOCAL/GLOBAL/UNKNOWN）。update.md bash からポート。`gsd-tools update-context` を支える（#498） |
 | `validate-command-router.cjs` | `gsd-tools validate` 向けの薄い CJS サブコマンドルーターアダプター |
 | `validate.cjs` | 純粋なフェーズバリアント正規化ヘルパー（`phaseVariants`、`buildRoadmapPhaseVariants`、`buildNotStartedPhaseVariants`）。`verify.cjs` の W006/W007 チェックで使用。I/O なし、非同期なし |

@@ -89,19 +89,19 @@ GSD は新鮮なコンテキストを前提に設計されています。すべ�
 これは警告 `W002` を生成します。状態 CLI を使って診断と修復を行います。
 
 ```bash
-node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" state validate
+node "$HOME/.claude/get-ship-done/bin/gsd-tools.cjs" state validate
 ```
 
 書き込まずに同期で何が変わるかをプレビューします。
 
 ```bash
-node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" state sync --verify
+node "$HOME/.claude/get-ship-done/bin/gsd-tools.cjs" state sync --verify
 ```
 
 同期を適用します。
 
 ```bash
-node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" state sync
+node "$HOME/.claude/get-ship-done/bin/gsd-tools.cjs" state sync
 ```
 
 これらのコマンドはディスク上の実際のプロジェクト状態から `STATE.md` を再構築します。手動での `STATE.md` 編集に代わるものです。

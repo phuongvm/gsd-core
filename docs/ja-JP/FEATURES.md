@@ -2057,7 +2057,7 @@ Claude が GSD ワークフローコンテキスト外でファイル編集を�
 
 ### 92. ゲート分類法
 
-**参照:** `get-shit-done/references/gates.md`
+**参照:** `get-ship-done/references/gates.md`
 **エージェント:** plan-checker、verifier
 
 **目的:** すべてのワークフロー決定ポイントを構造化する 4 つの正規ゲートタイプを定義し、plan-checker と verifier エージェントが一貫したゲートロジックを適用できるようにします。
@@ -2906,7 +2906,7 @@ Source commit: abc1234 (3 commits behind HEAD)
 - REQ-HUMAN-VERIFY-02: 人間が必要な検証はフェーズ終了時のレビューが解決するまで保留のまま。
 - REQ-HUMAN-VERIFY-03: キーのない設定は `"end-of-phase"` を使用しなければならない。
 
-**参照:** [チェックポイントリファレンス](../../get-shit-done/references/checkpoints.md)
+**参照:** [チェックポイントリファレンス](../../get-ship-done/references/checkpoints.md)
 
 ---
 

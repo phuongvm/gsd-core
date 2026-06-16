@@ -29,7 +29,7 @@ adequado, coleta o resultado e atualiza o estado compartilhado em `.planning/`.
 
 ## O padrão orquestrador → agente
 
-Todos os workflows em `get-shit-done/workflows/` seguem a mesma estrutura:
+Todos os workflows em `get-ship-done/workflows/` seguem a mesma estrutura:
 
 ```text
 Orquestrador (arquivo .md de workflow)

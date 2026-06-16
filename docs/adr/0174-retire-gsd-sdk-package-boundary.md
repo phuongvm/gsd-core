@@ -2,14 +2,14 @@
 
 - **Status:** Accepted (2026-05-23)
 - **Date:** 2026-05-23
-- **Tracking issue:** [#174](https://github.com/open-gsd/get-shit-done-redux/issues/174) — sub-issues #175–#197
+- **Tracking issue:** [#174](https://github.com/open-gsd/get-ship-done-redux/issues/174) — sub-issues #175–#197
 
 ## Supersedes
 
 | ADR | What it said | Why it is superseded |
 |-----|-------------|----------------------|
-| [ADR-0005](0005-sdk-architecture-seam-map.md) | Established the SDK as a composition of explicit seam Modules with thin Adapters, with the SDK package itself as the composition root. | The SDK package boundary is being retired; the seam-Module vocabulary survives intact under a single `src/` tree inside `get-shit-done-cc`. |
-| [ADR-0007](0007-sdk-package-seam-module.md) | Defined one explicit SDK Package Seam Module for the `@opengsd/gsd-sdk` → `@opengsd/get-shit-done-redux` compatibility transition. | The transition scaffolding this Module owned (install-layout probing, legacy-asset discovery, compatibility diagnostics) is deleted when the SDK package boundary is retired. |
+| [ADR-0005](0005-sdk-architecture-seam-map.md) | Established the SDK as a composition of explicit seam Modules with thin Adapters, with the SDK package itself as the composition root. | The SDK package boundary is being retired; the seam-Module vocabulary survives intact under a single `src/` tree inside `@opengsd/gsd-core`. |
+| [ADR-0007](0007-sdk-package-seam-module.md) | Defined one explicit SDK Package Seam Module for the `@opengsd/gsd-sdk` → `@opengsd/get-ship-done-redux` compatibility transition. | The transition scaffolding this Module owned (install-layout probing, legacy-asset discovery, compatibility diagnostics) is deleted when the SDK package boundary is retired. |
 | [ADR-0012](0012-command-routing-hub.md) | Introduced `CommandRoutingHub` with a `mode: 'sdk' \| 'cjs'` parameter, `sdkLoader`, `cjsRegistry`, and the `SdkDispatchFailed` / `SdkLoadFailed` errorKinds as the dispatch seam for CJS command families. | The Hub survives but is simplified: `mode`, `sdkLoader`, `cjsRegistry`, and SDK-failure errorKinds are deleted because there is no second runtime to select. The four surviving cross-cutting concerns (errors, manifest, args, observability) remain in the Hub and are now unambiguously load-bearing. |
 | [ADR-3524](3524-cjs-sdk-hard-seam.md) | Hardened the CJS↔SDK seam with a generator-based Shared-Module Source Policy (one source of truth per Module, generated artifacts, freshness checks, hand-sync pair lint) as the canonical Phase 5 engine. | The generator pattern solved drift within the dual-runtime world. Collapsing onto a single TypeScript source tree in `src/` eliminates the seam these generators bridged; tsc replaces every `.generated.cjs` artifact. |
 
@@ -31,7 +31,7 @@ The following forced-decisions explain why this consolidation is happening now r
 
 ### 1. Single npm package
 
-`get-shit-done-cc` is the sole npm package. `@opengsd/gsd-sdk` is retired. No external programmatic API is exposed. The typed contract is internal to `get-shit-done-cc`.
+`@opengsd/gsd-core` is the sole npm package. `@opengsd/gsd-sdk` is retired. No external programmatic API is exposed. The typed contract is internal to `@opengsd/gsd-core`.
 
 ### 2. Source shape — TypeScript canonical in `src/`, compiled to CJS in `dist/`
 
@@ -112,7 +112,7 @@ Adding a new variant requires amending this ADR (preserving the drift-prevention
 - **External programmatic API surface retires.** Accepted by the user — it is not a requirement. Any future external API surface would be a new design decision, not a reversion.
 - **CONTEXT.md and ~20 doc files require updating across Phase 6 PRs.** The "Shared CJS/SDK Module" qualifier, SDK seam descriptions, and references to the `sdk/` directory structure are updated in Phase 6 (deferred; this ADR does not touch CONTEXT.md).
 - **~15–18 PRs of implementation work across 7 phases.** See Migration Plan below.
-- **`tsc` build step added to `prepublishOnly`.** `get-shit-done-cc` currently has no TypeScript compilation at the root. The build step is net-simpler than the existing generator infrastructure, but it is a new step in the publish path.
+- **`tsc` build step added to `prepublishOnly`.** `@opengsd/gsd-core` currently has no TypeScript compilation at the root. The build step is net-simpler than the existing generator infrastructure, but it is a new step in the publish path.
 
 ## Alternatives considered
 
@@ -146,4 +146,4 @@ Seven phases, ~15–18 PRs total. Each phase is a coherent slice that leaves the
 | 6 — Docs cleanup | Update CONTEXT.md, `docs/`, workflow markdown, and localized docs to remove SDK references. | ~4 |
 | 7 — Land this ADR's PR | The PR for this ADR closes the umbrella tracking issue. | 1 (this PR) |
 
-Implementation is tracked in [#174 — sub-issues #175–#197](https://github.com/open-gsd/get-shit-done-redux/issues/174).
+Implementation is tracked in [#174 — sub-issues #175–#197](https://github.com/open-gsd/get-ship-done-redux/issues/174).

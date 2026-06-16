@@ -2,7 +2,7 @@
 
 - **Status:** Proposed (2026-05-28)
 - **Date:** 2026-05-28
-- **Tracking issue:** [#443](https://github.com/open-gsd/get-shit-done-redux/issues/443)
+- **Tracking issue:** [#443](https://github.com/open-gsd/get-ship-done-redux/issues/443)
 
 ## Context
 

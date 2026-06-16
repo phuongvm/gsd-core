@@ -13,7 +13,7 @@ A maintainer triggered the workflow with `version=1.01.0`. The validator accepte
 
 | Artifact | Value |
 |---|---|
-| npm registry (`@opengsd/get-shit-done-redux`, `@opengsd/gsd-sdk`) | `1.1.0` — published, immutable |
+| npm registry (`@opengsd/get-ship-done-redux`, `@opengsd/gsd-sdk`) | `1.1.0` — published, immutable |
 | git tag | `v1.01.0` |
 | GitHub release title | `v1.1.0` |
 | GitHub release tag | `v1.01.0` |
@@ -39,7 +39,7 @@ The `IS_MAJOR` detection regex is updated in parallel: `^[0-9]+\.0\.0$` → `^(0
 
 ### 2. Add a duplicate-version precheck against npm at validation time
 
-A new `Reject already-published versions` step runs immediately after format validation in the `validate-version` job. It calls `npm view "$pkg@$VERSION" version` for both `@opengsd/get-shit-done-redux` and `@opengsd/gsd-sdk`. If either resolves, the job fails in under 5 seconds with a clear error. No build or test cycle is wasted.
+A new `Reject already-published versions` step runs immediately after format validation in the `validate-version` job. It calls `npm view "$pkg@$VERSION" version` for both `@opengsd/get-ship-done-redux` and `@opengsd/gsd-sdk`. If either resolves, the job fails in under 5 seconds with a clear error. No build or test cycle is wasted.
 
 ## Recovery sequence
 
@@ -48,7 +48,7 @@ The following steps recover the production state left by the `1.01.0` and `1.03.
 ### 1. Cancel any failing in-flight runs
 
 ```sh
-gh run cancel <run-id> --repo open-gsd/get-shit-done-redux
+gh run cancel <run-id> --repo open-gsd/get-ship-done-redux
 ```
 
 ### 2. Fix the v1.1.0 divergence (npm published, tag/release/branch on wrong name)
@@ -62,8 +62,8 @@ git tag v1.1.0 <sha-of-release/1.1.0-head>
 git push origin v1.1.0
 
 # Retarget the existing GitHub release from the typo tag to the correct one
-gh release edit v1.01.0 --repo open-gsd/get-shit-done-redux --tag v1.1.0
-gh release edit v1.1.0  --repo open-gsd/get-shit-done-redux --verify-tag
+gh release edit v1.01.0 --repo open-gsd/get-ship-done-redux --tag v1.1.0
+gh release edit v1.1.0  --repo open-gsd/get-ship-done-redux --verify-tag
 
 # Delete the typo tag and branch
 git push origin :refs/tags/v1.01.0

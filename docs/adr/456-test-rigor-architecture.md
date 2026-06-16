@@ -144,9 +144,9 @@ The sweep must complete before the three ESLint rules flip to `error` (i.e., bef
 
 ## References
 
-- Tracking issue: [#456](https://github.com/open-gsd/get-shit-done-redux/issues/456)
+- Tracking issue: [#456](https://github.com/open-gsd/get-ship-done-redux/issues/456)
 - ESLint harness: `452-eslint-lint-harness.md`
-- Warn-to-error follow-up: [#453](https://github.com/open-gsd/get-shit-done-redux/issues/453)
+- Warn-to-error follow-up: [#453](https://github.com/open-gsd/get-ship-done-redux/issues/453)
 - Lock-race determinism fix: PR #450, issue #432 / #407
 - `TESTING-STANDARDS.md` — full rule-to-enforcement table
 - `docs/TESTING-SUITES.md` — suite naming and CI matrix

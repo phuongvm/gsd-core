@@ -122,8 +122,8 @@ Lista os arquivos de workflow que o executor lê antes de começar. Sempre inclu
 
 ```xml
 <execution_context>
-@~/.claude/get-shit-done/workflows/execute-plan.md
-@~/.claude/get-shit-done/templates/summary.md
+@~/.claude/get-ship-done/workflows/execute-plan.md
+@~/.claude/get-ship-done/templates/summary.md
 </execution_context>
 ```
 

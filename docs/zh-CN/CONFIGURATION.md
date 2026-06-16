@@ -184,7 +184,7 @@ API 密钥字段接受字符串值（密钥本身）。也可以设置为哨兵�
 | `firecrawl` | string \| boolean \| null | `null` | 用于深度抓取的 Firecrawl API 密钥。显示时已脱敏 |
 | `exa_search` | string \| boolean \| null | `null` | 用于语义搜索的 Exa Search API 密钥。显示时已脱敏 |
 
-**脱敏规范（`get-shit-done/bin/lib/secrets.cjs`）：** 8 个字符及以上的密钥显示为 `****<末4位>`；较短的密钥显示为 `****`；`null`/空值显示为 `(unset)`。明文原样写入 `.planning/config.json`——该文件是安全边界——但 CLI、确认表格、日志和 `AskUserQuestion` 描述中不显示明文。这也适用于 `config-set` 命令本身的输出：`config-set brave_search <key>` 返回带脱敏值的 JSON 负载。
+**脱敏规范（`get-ship-done/bin/lib/secrets.cjs`）：** 8 个字符及以上的密钥显示为 `****<末4位>`；较短的密钥显示为 `****`；`null`/空值显示为 `(unset)`。明文原样写入 `.planning/config.json`——该文件是安全边界——但 CLI、确认表格、日志和 `AskUserQuestion` 描述中不显示明文。这也适用于 `config-set` 命令本身的输出：`config-set brave_search <key>` 返回带脱敏值的 JSON 负载。
 
 ### 代码审查 CLI 路由
 
@@ -256,7 +256,7 @@ API 密钥字段接受字符串值（密钥本身）。也可以设置为哨兵�
 | `workflow.plan_chunked` | boolean | `false` | 启用分块规划模式。为 `true`（或向 `/gsd-plan-phase` 传递 `--chunked` 标志）时，编排器将单个长期规划器任务拆分为一个简短的轮廓任务，后跟 N 个简短的按计划任务（每个约 3-5 分钟）。每个计划单独提交以具备崩溃韧性。如果任务挂起且终端被强制终止，使用 `--chunked` 重新运行将从最后完成的计划处恢复。在长期任务可能在 stdio 上挂起的 Windows 上特别有用。v1.38 新增 |
 | `workflow.code_review_command` | string | （无） | `/gsd-ship` 中外部代码审查集成的 shell 命令。通过 stdin 接收更改的文件路径。非零退出阻塞发布工作流。v1.36 新增 |
 | `workflow.tdd_mode` | boolean | `false` | 将 TDD 流水线作为一等执行模式启用。为 `true` 时，规划器积极地将 `type: tdd` 应用于符合条件的任务（业务逻辑、API、验证、算法），执行器强制执行 RED/GREEN/REFACTOR 门禁序列。阶段结束时的协作审查检查点验证门禁合规性。v1.36 新增 |
-| `workflow.human_verify_mode` | string | `'end-of-phase'` | 控制人工验证检查点。`'end-of-phase'`（自 #3309 起为默认值）抑制 `checkpoint:human-verify` 任务，并将检查嵌入 `<verify><human-check>` 块以供阶段结束审查。`'mid-flight'` 恢复阻塞式检查点任务。`checkpoint:decision` 和 `checkpoint:human-action` 不受影响。参见[检查点参考](../../get-shit-done/references/checkpoints.md#checkpoint_types)。 |
+| `workflow.human_verify_mode` | string | `'end-of-phase'` | 控制人工验证检查点。`'end-of-phase'`（自 #3309 起为默认值）抑制 `checkpoint:human-verify` 任务，并将检查嵌入 `<verify><human-check>` 块以供阶段结束审查。`'mid-flight'` 恢复阻塞式检查点任务。`checkpoint:decision` 和 `checkpoint:human-action` 不受影响。参见[检查点参考](../../get-ship-done/references/checkpoints.md#checkpoint_types)。 |
 | `workflow.cross_ai_execution` | boolean | `false` | 将阶段执行委托给外部 AI CLI，而非派生本地执行器 agent。适用于利用不同模型在特定阶段的优势。v1.36 新增 |
 | `workflow.cross_ai_command` | string | （无） | 跨 AI 执行的 shell 命令模板。通过 stdin 接收阶段提示词。必须生成与 SUMMARY.md 兼容的输出。当 `cross_ai_execution` 为 `true` 时必需。v1.36 新增 |
 | `workflow.cross_ai_timeout` | number | `300` | 跨 AI 执行命令的超时秒数。防止失控的外部进程。v1.36 新增 |
@@ -285,7 +285,7 @@ API 密钥字段接受字符串值（密钥本身）。也可以设置为哨兵�
 
 ## 发布设置
 
-`ship.pr_body_sections` 为 `/gsd-ship` 添加额外的 PR 正文节，用于项目特定的 PRD/PR 正文内容，而无需编辑 `get-shit-done/workflows/ship.md`。
+`ship.pr_body_sections` 为 `/gsd-ship` 添加额外的 PR 正文节，用于项目特定的 PRD/PR 正文内容，而无需编辑 `get-ship-done/workflows/ship.md`。
 
 有关入门示例和故障排除的用户指南，请参阅[自定义 PR 正文节](../ship-pr-body-sections.md)。
 
@@ -757,7 +757,7 @@ gsd-tools query config-set features.thinking_partner false
 | gsd-doc-writer | Opus | Sonnet | Haiku | Sonnet | Inherit |
 | gsd-doc-verifier | Sonnet | Sonnet | Haiku | Haiku | Inherit |
 
-> **所有 33 个发布 agent 在目录（`sdk/shared/model-catalog.json`）中均有显式的按配置文件层级分配。** 上表显示最常用 agent 的代表性子集。对于此处未列出的 agent，`model_overrides` 接受任何已发布的 agent 名称。权威的配置文件数据通过 `get-shit-done/bin/lib/model-catalog.cjs` 和 `sdk/src/model-catalog.ts` 从 `sdk/shared/model-catalog.json` 导出。
+> **所有 33 个发布 agent 在目录（`sdk/shared/model-catalog.json`）中均有显式的按配置文件层级分配。** 上表显示最常用 agent 的代表性子集。对于此处未列出的 agent，`model_overrides` 接受任何已发布的 agent 名称。权威的配置文件数据通过 `get-ship-done/bin/lib/model-catalog.cjs` 和 `sdk/src/model-catalog.ts` 从 `sdk/shared/model-catalog.json` 导出。
 
 ### 按 Agent 覆盖
 

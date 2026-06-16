@@ -166,11 +166,11 @@ Strategy: worktree
 | 명령어: new-workspace | `commands/gsd/new-workspace.md` |
 | 명령어: list-workspaces | `commands/gsd/list-workspaces.md` |
 | 명령어: remove-workspace | `commands/gsd/remove-workspace.md` |
-| 워크플로우: new-workspace | `get-shit-done/workflows/new-workspace.md` |
-| 워크플로우: list-workspaces | `get-shit-done/workflows/list-workspaces.md` |
-| 워크플로우: remove-workspace | `get-shit-done/workflows/remove-workspace.md` |
-| Init 함수 | `get-shit-done/bin/lib/init.cjs`(`cmdInitNewWorkspace`, `cmdInitListWorkspaces`, `cmdInitRemoveWorkspace` 추가) |
-| 라우팅 | `get-shit-done/bin/gsd-tools.cjs`(init switch에 case 추가) |
+| 워크플로우: new-workspace | `get-ship-done/workflows/new-workspace.md` |
+| 워크플로우: list-workspaces | `get-ship-done/workflows/list-workspaces.md` |
+| 워크플로우: remove-workspace | `get-ship-done/workflows/remove-workspace.md` |
+| Init 함수 | `get-ship-done/bin/lib/init.cjs`(`cmdInitNewWorkspace`, `cmdInitListWorkspaces`, `cmdInitRemoveWorkspace` 추가) |
+| 라우팅 | `get-ship-done/bin/gsd-tools.cjs`(init switch에 case 추가) |
 | 테스트 | `tests/workspace.test.cjs` |
 
 ## 설계 결정

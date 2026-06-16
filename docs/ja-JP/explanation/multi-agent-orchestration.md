@@ -14,7 +14,7 @@ GSD Core のマルチエージェント設計はその問題への直接的な�
 
 ## オーケストレーター → エージェントパターン
 
-`get-shit-done/workflows/` のすべてのワークフローは同じ形を持ちます：
+`get-ship-done/workflows/` のすべてのワークフローは同じ形を持ちます：
 
 ```text
 Orchestrator（ワークフロー .md ファイル）

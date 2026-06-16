@@ -78,8 +78,8 @@ Approximately 59 hand-written and 13 generated `.cjs` files currently coexist in
 
 ## References
 
-- Tracking issue: [#452](https://github.com/open-gsd/get-shit-done-redux/issues/452)
-- Follow-up (warn → error): [#453](https://github.com/open-gsd/get-shit-done-redux/issues/453)
+- Tracking issue: [#452](https://github.com/open-gsd/get-ship-done-redux/issues/452)
+- Follow-up (warn → error): [#453](https://github.com/open-gsd/get-ship-done-redux/issues/453)
 - Test-rigor architecture: `456-test-rigor-architecture.md`
 - Generated CJS collapse (future): `457-generated-cjs-single-source.md`
 - Homegrown scripts retired: `scripts/lint-no-source-grep.cjs`, `scripts/lint-no-magic-sleep.cjs`

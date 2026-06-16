@@ -24,7 +24,7 @@ GSD Core 的多智能体设计正是对这一问题的直接回应。与其让�
 
 ## 编排器 → 智能体模式
 
-`get-shit-done/workflows/` 中的每个工作流都遵循相同的结构：
+`get-ship-done/workflows/` 中的每个工作流都遵循相同的结构：
 
 ```text
 Orchestrator (workflow .md file)

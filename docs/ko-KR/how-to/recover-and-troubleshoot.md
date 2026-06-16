@@ -89,19 +89,19 @@ GSD는 새로운 컨텍스트를 중심으로 설계되었습니다. 모든 서�
 이것은 경고 `W002`를 생성합니다. 상태 CLI를 사용하여 진단하고 복구합니다:
 
 ```bash
-node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" state validate
+node "$HOME/.claude/get-ship-done/bin/gsd-tools.cjs" state validate
 ```
 
 쓰기 없이 동기화가 변경할 내용 미리 보기:
 
 ```bash
-node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" state sync --verify
+node "$HOME/.claude/get-ship-done/bin/gsd-tools.cjs" state sync --verify
 ```
 
 동기화 적용:
 
 ```bash
-node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" state sync
+node "$HOME/.claude/get-ship-done/bin/gsd-tools.cjs" state sync
 ```
 
 이 명령들은 디스크의 실제 프로젝트 상태에서 `STATE.md`를 재구성합니다. 수동 `STATE.md` 편집을 대체합니다.

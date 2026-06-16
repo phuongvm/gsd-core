@@ -589,7 +589,7 @@ ROADMAP.md 中阶段的 CRUD 操作 — 通过单一合并命令添加、插入�
 /gsd-help --brief <topic>           # 简洁的范围查找 — 签名 + 单行摘要
 ```
 
-完整别名表请参阅 `get-shit-done/workflows/help/modes/topic.md`。未知主题将打印已识别的列表。
+完整别名表请参阅 `get-ship-done/workflows/help/modes/topic.md`。未知主题将打印已识别的列表。
 
 ---
 

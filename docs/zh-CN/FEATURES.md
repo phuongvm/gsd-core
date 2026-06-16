@@ -2073,7 +2073,7 @@ PreToolUse 钩子，检测 Claude 在 GSD 工作流上下文之外尝试文件�
 
 ### 92. 门控分类
 
-**参考：** `get-shit-done/references/gates.md`
+**参考：** `get-ship-done/references/gates.md`
 **智能体：** plan-checker、verifier
 
 **目的：** 定义构建所有工作流决策点的 4 种规范门控类型，使 plan-checker 和 verifier 智能体能够应用一致的门控逻辑。
@@ -2922,7 +2922,7 @@ explicit reviewer flags -> --all -> review.default_reviewers -> all detected rev
 - REQ-HUMAN-VERIFY-02：人工需要的验证必须保持待处理，直到阶段末审查解决。
 - REQ-HUMAN-VERIFY-03：没有该键的配置必须使用 `"end-of-phase"`。
 
-**参考：** [检查点参考](../../get-shit-done/references/checkpoints.md)
+**参考：** [检查点参考](../../get-ship-done/references/checkpoints.md)
 
 ---
 

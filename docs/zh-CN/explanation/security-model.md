@@ -62,7 +62,7 @@ GSD Core 生成的 Markdown 文件会成为 LLM 系统提示。研究流水线�
 
 GSD Core 在三个层面应对提示注入。
 
-**输入验证（`security.cjs`）。** `get-shit-done/bin/lib/security.cjs` 模块是核心安全工具。它提供：
+**输入验证（`security.cjs`）。** `get-ship-done/bin/lib/security.cjs` 模块是核心安全工具。它提供：
 
 - 路径遍历防护：用户提供的文件路径（`--text-file`、`--prd`）经过验证，确保解析在项目目录内，并显式处理 macOS `/var` → `/private/var` 符号链接解析
 - 提示注入检测：已知注入模式（角色覆盖、指令绕过、系统标签注入）在用户提供的文本进入任何规划产物之前进行扫描

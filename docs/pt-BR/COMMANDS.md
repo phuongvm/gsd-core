@@ -591,7 +591,7 @@ Exibe os comandos GSD no nível solicitado. O padrão cabe em uma tela; `--full`
 /gsd-help --brief <topic>           # Consulta resumida com escopo — assinatura + resumo em uma linha
 ```
 
-Consulte `get-shit-done/workflows/help/modes/topic.md` para a tabela completa de aliases. Tópicos desconhecidos exibem a lista reconhecida.
+Consulte `get-ship-done/workflows/help/modes/topic.md` para a tabela completa de aliases. Tópicos desconhecidos exibem a lista reconhecida.
 
 ---
 
